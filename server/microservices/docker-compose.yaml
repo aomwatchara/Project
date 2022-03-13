@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  gateway:
+    image: krismt/nodemon
+    container_name: 'GraphQL_GW'
+    ports:
+      - 4000:4000
+    volumes:
+      - ./gateway:/data
+
+  sv_user:
+    image: krismt/nodemon
+    container_name: 'sv_user'
+    ports:
+      - 4001:4000
+    volumes:
+      - ./sv_user:/data
+
+  sv_book:
+    image: krismt/nodemon
+    container_name: 'sv_book'
+    ports:
+      - 4002:4000
+    volumes:
+      - ./sv_book:/data
+
+  sv_review:
+    image: krismt/nodemon
+    container_name: 'sv_review'
+    ports:
+      - 4003:4000
+    volumes:
+      - ./sv_review:/data
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - ./001-init-user-db.sh:/docker-entrypoint-initdb.d/001-init-user-db.sh
+      - ./postgres-data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: example
+      PGADMIN_DEFAULT_EMAIL: admin@example.com 
+  
+  client:
+    image: krismt/nodemon
+    container_name: 'client'
+    ports:
+      - 3000:3000
+    volumes:
+      - ../../client/myweb:/data
+
