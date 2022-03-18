@@ -1,6 +1,6 @@
 
 <?php
-require 'connect.php';
+require 'ConnectDB.php';
 //รับค่าไอดีที่จะแก้ไข
 $ProductID = mysqli_real_escape_string($con,$_GET['ProductID']);
 

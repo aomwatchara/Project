@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require 'ConnectDB.php';
 if($_POST["ProductID"]==''){
     echo "<script type='text/javascript'>"; 
     echo "alert('Error Contact Admin !!');"; 

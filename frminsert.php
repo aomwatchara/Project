@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require 'ConnectDB.php';
 
 
 $pname = $_POST['pname'];
