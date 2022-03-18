@@ -68,7 +68,7 @@ function warm()
                 </tr>
 
                 <?php
-                require 'connect.php';
+                require 'ConnectDB.php';
                 $text = null;
                 if (isset($_POST["pname"])) {
                     $text = $_POST["pname"];

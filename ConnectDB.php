@@ -4,7 +4,7 @@
     $password = "";
     $db_name = "shop";
 
-    $con = mysqli_connect($host, $username, $password, &db_name); //เชื่อมต่อฐานข้อมุล
+    $con = mysqli_connect($host, $username, $password, $db_name); //เชื่อมต่อฐานข้อมุล
 
     if (mysqli_connect_errno())
     {
