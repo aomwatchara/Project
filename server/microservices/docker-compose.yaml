@@ -2,7 +2,7 @@ version: '3'
 
 services:
   gateway:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     container_name: 'GraphQL_GW'
     ports:
       - 4000:4000
@@ -10,7 +10,7 @@ services:
       - ./gateway:/data
 
   sv_user:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     container_name: 'sv_user'
     ports:
       - 4001:4000
@@ -18,7 +18,7 @@ services:
       - ./sv_user:/data
 
   sv_book:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     container_name: 'sv_book'
     ports:
       - 4002:4000
@@ -26,7 +26,7 @@ services:
       - ./sv_book:/data
 
   sv_review:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     container_name: 'sv_review'
     ports:
       - 4003:4000
@@ -52,7 +52,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@example.com 
   
   client:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     container_name: 'client'
     ports:
       - 3000:3000

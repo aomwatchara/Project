@@ -22,7 +22,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
 
   backend:
-    image: krismt/nodemon
+    image: himera/nodemon:v1
     volumes:
       - ./backend:/data
     ports:
